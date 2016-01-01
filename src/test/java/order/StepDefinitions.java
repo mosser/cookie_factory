@@ -1,7 +1,7 @@
 package order;
 
 import cod.*;
-import cod.business.*;
+import cod.tcf.*;
 
 import cucumber.api.java.en.*;
 import java.util.Optional;
@@ -38,7 +38,7 @@ public class StepDefinitions {
 		return customer.get();
 	}
 
-	private OrderShoppingCart getOrderShoppingCart(String customerName) {
+	private ShoppingCart getOrderShoppingCart(String customerName) {
 		return cod.getShoppingCart(getCustomer(customerName));
 	}
 
@@ -55,15 +55,15 @@ public class StepDefinitions {
 
 	@When("^(.*) selects to buy (\\d+) pieces? of (.*)")
 	public void selectItem(String customerName, int quantity, String productName) {
-		OrderShoppingCart cart = getOrderShoppingCart(customerName);
-		Item it = new Item(Cookie.valueOf(productName), quantity);
+		ShoppingCart cart = getOrderShoppingCart(customerName);
+		Item it = new Item(Recipes.valueOf(productName), quantity);
 		cart.add(it);
 	}
 
 	@When("^(.*) selects to remove (\\d+) pieces? of (.*)$")
 	public void removeItem(String customerName, int quantity, String productName) {
-		OrderShoppingCart cart = getOrderShoppingCart(customerName);
-		Item it = new Item(Cookie.valueOf(productName), quantity);
+		ShoppingCart cart = getOrderShoppingCart(customerName);
+		Item it = new Item(Recipes.valueOf(productName), quantity);
 		cart.remove(it);
 	}
 
@@ -92,13 +92,13 @@ public class StepDefinitions {
 
 	@Then("^(.*)'s order contains this very item: (\\d+)x(.*)")
 	public void orderContainsItem(String customerName, int quantity, String productName) {
-		OrderShoppingCart cart = getOrderShoppingCart(customerName);
-		assertTrue(cart.contains(new Item(Cookie.valueOf(productName),quantity)));
+		ShoppingCart cart = getOrderShoppingCart(customerName);
+		assertTrue(cart.contains(new Item(Recipes.valueOf(productName),quantity)));
 	}
 
 	@Then("^(.*)'s order contains (\\d+) items?$")
 	public void orderSize(String customerName, int n) {
-		OrderShoppingCart cart = getOrderShoppingCart(customerName);
+		ShoppingCart cart = getOrderShoppingCart(customerName);
 		assertEquals(n, cart.size());
 	}
 

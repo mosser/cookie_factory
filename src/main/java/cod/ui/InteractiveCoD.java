@@ -15,8 +15,13 @@ public class InteractiveCoD extends Shell<CookieOnDemand> {
 
 		// Registering the command available for the user
 		register(
-			ListPreMadeCookies.class,
-			Bye.class
+				Bye.class,
+				ListPreMadeCookies.class,
+				CreateCustomer.class,
+				OrderCookie.class,
+				ShowCart.class,
+				RemoveCookie.class,
+				ProcessCart.class
 		);
 
 	}

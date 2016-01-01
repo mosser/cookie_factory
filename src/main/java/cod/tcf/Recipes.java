@@ -1,6 +1,6 @@
-package cod.business;
+package cod.tcf;
 
-public enum Cookie {
+public enum Recipes implements Cookie {
 
 	CHOCOLALALA("Chocolalala"),
 	DARK_TEMPTATION("Dark Temptation"),
@@ -8,9 +8,10 @@ public enum Cookie {
 
 	private String name;
 
-	private Cookie(String value) { this.name = value; }
+	Recipes(String value) { this.name = value; }
 
-	public String getName() {
+	@Override
+	public String describe() {
 		return name;
 	}
 

@@ -1,11 +1,11 @@
 package cod.impl;
 
-import cod.OrderShoppingCart;
-import cod.business.Item;
+import cod.ShoppingCart;
+import cod.tcf.Item;
 
 import java.util.*;
 
-public class VolatileOrderShoppingCart implements OrderShoppingCart {
+public class VolatileShoppingCart implements ShoppingCart {
 
 	private Set<Item> items = new HashSet<>();
 

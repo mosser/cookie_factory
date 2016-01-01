@@ -1,6 +1,6 @@
 package cod;
 
-import cod.business.Customer;
+import cod.tcf.Customer;
 import java.util.Optional;
 
 public interface CustomerDatabase {

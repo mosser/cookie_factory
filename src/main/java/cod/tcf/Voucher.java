@@ -1,5 +1,4 @@
-package cod.business;
-
+package cod.tcf;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -26,4 +25,11 @@ public class Voucher {
 		return contents.stream().map(it -> it.getQuantity()).reduce(0,(acc,n) -> acc + n);
 	}
 
+	@Override
+	public String toString() {
+		return "Voucher for "+ numberOfCookies()+" cookies { " +
+				"ref: '" + uuid + '\'' +
+				" -> " + contents +
+				" }";
+	}
 }

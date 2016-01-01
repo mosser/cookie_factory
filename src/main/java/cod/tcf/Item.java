@@ -1,4 +1,4 @@
-package cod.business;
+package cod.tcf;
 
 
 public class Item {
@@ -12,20 +12,18 @@ public class Item {
 	}
 
 	public Cookie getCookie() { return cookie; }
-
 	public int getQuantity() { return quantity; }
 
+	@Override
+	public String toString() { return quantity + "x" + cookie.describe(); }
 
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (!(o instanceof Item)) return false;
-
 		Item item = (Item) o;
-
 		if (getQuantity() != item.getQuantity()) return false;
 		return getCookie() == item.getCookie();
-
 	}
 
 	@Override

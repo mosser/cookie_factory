@@ -1,4 +1,4 @@
-package cod.business;
+package cod.tcf;
 
 import java.util.Optional;
 
@@ -29,5 +29,11 @@ public class Customer {
 		return getFirstName().hashCode();
 	}
 
+	@Override
+	public String toString() {
+		return "Customer { " +
+				"firstName: '" + firstName + '\'' +
+				" }";
+	}
 }
 

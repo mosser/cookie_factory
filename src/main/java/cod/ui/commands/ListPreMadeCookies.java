@@ -1,7 +1,7 @@
 package cod.ui.commands;
 
 import cod.CookieOnDemand;
-import cod.business.*;
+import cod.tcf.*;
 import cod.ProductCatalogue;
 import cod.ui.framework.Command;
 

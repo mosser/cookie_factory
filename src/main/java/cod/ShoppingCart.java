@@ -1,11 +1,11 @@
 package cod;
 
 
-import cod.business.*;
+import cod.tcf.*;
 
 import java.util.List;
 
-public interface OrderShoppingCart {
+public interface ShoppingCart {
 
 	void add(Item i);
 	void remove(Item i);

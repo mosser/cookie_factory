@@ -1,6 +1,6 @@
 package cod;
 
-import cod.business.Customer;
+import cod.tcf.Customer;
 import cod.impl.VolatileCoD;
 
 public interface CookieOnDemand {
@@ -11,7 +11,7 @@ public interface CookieOnDemand {
 
 	ProductCatalogue getCatalogue();
 
-	OrderShoppingCart getShoppingCart(Customer customer);
+	ShoppingCart getShoppingCart(Customer customer);
 
 	void process(Customer c);
 

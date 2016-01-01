@@ -1,6 +1,7 @@
 package cod.ui.framework;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Shell<T> {
 
@@ -8,22 +9,29 @@ public class Shell<T> {
 	protected String invite;
 
 	public final void run() {
-		System.out.println("Interactive shell started. " + HELP_SYMBOL + " for help");
+		System.out.println("Interactive shell started. " + HELP_SYMBOL + " for help.\n");
 		Scanner scanner = new Scanner(System.in);
 		boolean shouldContinue = true;
 		while(shouldContinue) {
+			System.out.flush();
 			System.out.print(invite + " > ");
 			String keyword = scanner.next();
 
-			String[] args;
+			List<String> args;
 			if (scanner.hasNextLine()) {
-				args = scanner.nextLine().split(" ");
-			} else { args = new String[0]; }
+				args = Arrays.asList(scanner.nextLine().split(" "))
+								.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
+			} else { args = new LinkedList<>(); }
 
 			if (keyword.equals(HELP_SYMBOL)) {
 				help();
 			} else {
-				shouldContinue = processCommand(keyword, args);
+				try {
+					shouldContinue = processCommand(keyword, args);
+				} catch (IllegalArgumentException iae) {
+					System.err.println("Illegal arguments for command "+keyword+": " + args);
+					iae.printStackTrace();
+				}
 			}
 		}
 	}
@@ -35,10 +43,9 @@ public class Shell<T> {
 		}
 	}
 
-
 	private static final String HELP_SYMBOL = "?";
 
-	private boolean processCommand(String keyword, String[] parameters) {
+	private boolean processCommand(String keyword, List<String> args) {
 		if (!commands.containsKey(keyword)) {
 			System.out.println("Unknown command: " + keyword);
 			return true;
@@ -48,7 +55,7 @@ public class Shell<T> {
 		try {
 			Command inst = command.newInstance();
 			inst.withSystem(system);
-			inst.withParameters(parameters);
+			inst.withParameters(args);
 			return inst.process();
 
 		} catch(InstantiationException|IllegalAccessException e) {

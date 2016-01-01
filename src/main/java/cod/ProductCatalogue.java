@@ -1,7 +1,7 @@
 package cod;
 
 
-import cod.business.Cookie;
+import cod.tcf.Cookie;
 
 import java.util.List;
 
