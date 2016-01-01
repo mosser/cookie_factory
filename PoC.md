@@ -37,19 +37,19 @@ The following example shows how the 6 previous stories are demonstrated in the b
 
 ### Business Components
 
-Business objects from the TCF business domain (_e.g._, pre-made recipes, customer information) are implemented in the `tcf` package. We defined the CoD system with 3 main components: _(i)_ a customer database, _(ii)_ a product catalogue and _(iii)_ a shopping cart. Each component is defined by a Java interface implemented in the `cod` package.
+Business objects from the TCF business domain (_e.g._, pre-made recipes, customer information) are implemented in the `tcf` package. We defined the CoD system with 3 main components: _(i)_ a customer database, _(ii)_ a product catalogue and _(iii)_ a shopping cart. Each component is defined by a Java interface implemented in the `cod` package. 
 
   - [CustomerDatabase](src/main/java/cod/CustomerDatabase.java)
   - [ProductCatalogue](src/main/java/cod/ProductCatalogue.java)
   - [ShoppingCart](src/main/java/cod/ShoppingCart.java)
 
-We provide in this PoC a volatile implementation of each component, _i.e._, a non-persistent version of each component. These concrete implementations are defined in the `impl` package.
+The `CookieOnDemand` interface defines CoD as the aggregation of these threee components. We provide in this PoC a volatile implementation of each elements, _i.e._, a non-persistent version of each component. These concrete implementations are defined in the `impl` package.
 
 ![](https://raw.githubusercontent.com/mosser/cookie_factory/master/picts/poc_arch.png?token=AAXK0pS_Oq5-zNrA14jP2Fwjs1KUs7lpks5Wj-KXwA%3D%3D)   
 
 ### Interactive Shell
 
-The User interface is defined as a set of `Command`s, registered inside a `Shell`. The internal implementation of the shell is available in the `ui.framework` package, but should be considered as a black box.
+The User interface is defined as a set of `Command`s, registered inside a `Shell`. The internal implementation of the shell is available in the `ui.framework` package, but should be considered as a black box. In a command, an instance of the `CookieOnDemand` component is available through the `system` field.
 
 Adding a new command into the shell is a two step process:
 
@@ -68,7 +68,7 @@ Optionally, one can override the default behavior for the following steps:
   - __termination__: override the `shouldContinue()` method to return false if this method should interrupt  the shell (_e.g._, the `bye` command)
   
 
-For example, we consider here the command supporting user creation. This command is invoked by using the `create` keyword. It has one argument, the first name of the customer to create.
+For example, we consider here the command supporting user creation ([CreateCustomer](src/main/java/cod/ui/commands/CreateCustomer.java)). This command is invoked by using the `create` keyword. It has one argument, the first name of the customer to create.
 
 ```java
 public class CreateCustomer extends Command<CookieOnDemand> {
