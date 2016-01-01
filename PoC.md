@@ -15,5 +15,18 @@ The implementation of the _Cookie on Demand by The Cookie Factory_ system has al
   5. As Carter, I want to remove cookies from my cart so that I become less fat at the end
   6. As Carter, I want to send my cart to the system so that I'll pick up my cookies at some point
 
-It corresponds to the beginning of an epic dedicated to cookie ordering using the system. For each story, its _definition of done_ is implemented using the Cucumber framework. See [order.feature](src/test/resources/order.feature)
+It corresponds to the beginning of an epic dedicated to cookie ordering using the system. For each story, its _definition of done_ is implemented using the Cucumber framework. See [order.feature](src/test/resources/order.feature). Each step of the designed scenarios are implemented as classical unit tests in the file [StepDefinitions.java](src/test/java/order/StepDefinitions.java)
 
+## Running the proof of concept
+
+An interactive shell is provided to support user interaction. It is started by the Main class in the default package. To start the PoC from the command line, simply ask maven to proceed:
+
+<code bash>
+mosser@azrael cookie_carpaccio$ mvn clean package exec:java
+</code> 
+
+To list the commands available in the shell, use the `?` symbol.
+
+The following example shows how the 6 previous stories are demonstrated in the best-case scenario. (Error handling is implemented but too verbose for a screenshot).
+
+![](https://raw.githubusercontent.com/mosser/cookie_factory/master/picts/carter_run.png) 
