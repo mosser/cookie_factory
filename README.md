@@ -19,15 +19,18 @@ We decided to extend this workshop to address these issues. The idea here is to 
   - Being familiar with the agile mindset  (_e.g._, the idea of continuously delivering value to a customer) is mandatory.
   - Having used stories in a previous project is a plus, but not mandatory. However, knowing the notion of story is mandatory. 
   - Team should be composed of 3 to 4 peoples.
+  - Participants must have a programming environment that support Java 8 and maven 3.
 
-
+  
 ### Material
 
   - The ratio of animator / teams should be one animator for 4 teams at most.
-  - Print as many "Product Description Card" as participants (at least 2 per team)
-  - Print a lot of "Story Card"s for backlog descriptions (up to twenty per team)
-  - Print one "Backlog Template" per team (A3 sheet).
-  - Print one "Product Owner" persona per team.
+  - Print as many "[Product Description Card](docs/Product_Description_FR.pdf)" as participants (at least 2 per team)
+  - Print a lot of "[Story Card](docs/Story_cards_A4.pdf)"s for backlog descriptions (up to twenty per team)
+  - Print one "Project Template" ([p1](docs/template_backlog_a3.pdf), [p2](docs/template_iterations_A3.pdf)) per team (A3 sheets).
+  - Print one "[Product Owner](docs/product_owner.jpg)" persona per team.
+  
+
 
 ## Workshop Planning
 
