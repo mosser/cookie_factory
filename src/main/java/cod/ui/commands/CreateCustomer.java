@@ -8,7 +8,7 @@ import cod.ui.framework.Command;
 
 public class CreateCustomer extends Command<CookieOnDemand> {
 
-	String customerName;
+	private String customerName;
 
 	@Override
 	public String identifier() { return "create"; }
