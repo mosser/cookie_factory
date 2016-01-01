@@ -18,7 +18,7 @@ We decided to extend this workshop to address these issues. The idea here is to 
   - Audience should be aware of object-oriented software development to understand the initial code given during the kickoff. 
   - Being familiar with the agile mindset  (_e.g._, the idea of continuously delivering value to a customer) is mandatory.
   - Having used stories in a previous project is a plus, but not mandatory. However, knowing the notion of story is mandatory. 
-  - Team should be composed by 3 to 4 peoples.
+  - Team should be composed of 3 to 4 peoples.
 
 
 ### Material
@@ -51,13 +51,13 @@ We decided to extend this workshop to address these issues. The idea here is to 
 
 ### Product kickoff meeting (20 minutes)
 
-The animator describes the product we are going to build together, that is, the _Cookie on Demand_ (CoD) system. The client who ordered this product is _The Cookie Factory_ (TCF), a bakery brand with shops in all major town of the US. CoD is an innovative system that allows a customer to book cookies online (pre-made recipes or customized ones), select a _TCF_ bakery and an hour for pick-up. Cookies are prepared _on demand_, ensuring warm cookies for happy customers. A proof of concept was originally implemented. 
+The animator describes the product we are going to build together, that is, the _Cookie on Demand_ (CoD) system. The client who ordered this product is _The Cookie Factory_ (TCF), a bakery brand with shops in all major towns of the US. CoD is an innovative system that enable a customer to book cookies online (pre-made recipes or customized ones), select a _TCF_ bakery and an hour for pick-up. Cookies are prepared _on demand_, ensuring warm cookies for happy customers. A proof of concept was originally implemented. 
 
 This kickoff meeting describes this very product, and the initial stories that were implemented as part of the proof of concept.
 
 **Note for animators**: 
 
-  - Insist heavily on the fact that you are representing the client in this workshop. 
+  - Insist heavily on the fact that you are representing the client in this workshop, and are available at any time during iterations. 
   - Distribute Product description cards to the teams.
 
 ### Iteration #0: Product Backlog Design (25 minutes)
@@ -110,7 +110,7 @@ At the end of the iteration, an iteration backlog is available for the upcoming 
 
 ### Product status meeting #1 (10 minutes)
 
-I a few sentence, each team describes to the others:
+In a few sentences, each team describes to the others:
 
   1. What was planned for this iteration;
   2. What happened during this iteration;
