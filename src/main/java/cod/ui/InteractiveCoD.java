@@ -1,16 +1,17 @@
 package cod.ui;
 
 import cod.CookieOnDemand;
-import cod.impl.VolatileCoD;
 import cod.ui.commands.*;
 import cod.ui.framework.Shell;
 
+/**
+ * An Interactive shell that interacts with a Cookie on Demand instance
+ */
 public class InteractiveCoD extends Shell<CookieOnDemand> {
 
 	public InteractiveCoD() {
 
-		// Instantiating the CookieOnDemand system
-		this.system  = new VolatileCoD();
+		this.system  = CookieOnDemand.build();
 		this.invite  = "CoD";
 
 		// Registering the command available for the user

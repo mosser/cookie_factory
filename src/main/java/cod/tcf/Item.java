@@ -1,9 +1,13 @@
 package cod.tcf;
 
-
+/**
+ * An item is a pair that binds a given cookie to a quantity, e.g., (2, DARK_TEMPTATION) is an item.
+ */
 public class Item {
 
+	// The cookie involved in this pair
 	private Cookie cookie;
+	// The number of cookies in the item
 	private int quantity;
 
 	public Item(Cookie cookie, int quantity) {

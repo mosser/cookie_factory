@@ -1,5 +1,8 @@
 package cod.tcf;
 
+/**
+ * A recipe is a pre-made cookie available in TCF bakeries.
+ */
 public enum Recipes implements Cookie {
 
 	CHOCOLALALA("Chocolalala"),
@@ -11,8 +14,6 @@ public enum Recipes implements Cookie {
 	Recipes(String value) { this.name = value; }
 
 	@Override
-	public String describe() {
-		return name;
-	}
+	public String describe() { return name; }
 
 }

@@ -4,9 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * A voucher should be presented at the bakery to pick up the order.
+ */
 public class Voucher {
 
+	// An unique identifier for this voucher
 	private String uuid;
+	// The ordered cookies.
 	private List<Item> contents;
 
 	public Voucher() {
