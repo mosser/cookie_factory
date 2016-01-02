@@ -5,6 +5,8 @@ import cod.tcf.Customer;
 import cod.tcf.Voucher;
 import cod.ui.framework.Command;
 
+import java.util.List;
+
 public class ProcessCart extends Command<CookieOnDemand> {
 
 	private Customer customer;
@@ -13,7 +15,7 @@ public class ProcessCart extends Command<CookieOnDemand> {
 	public String identifier() { return "send"; }
 
 	@Override
-	public void loadArgs() {
+	public void load(List<String> args) {
 		customer = system.getCustomers().findByFirstName(args.get(0)).get();
 	}
 

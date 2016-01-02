@@ -5,6 +5,8 @@ import cod.ShoppingCart;
 import cod.tcf.Customer;
 import cod.ui.framework.Command;
 
+import java.util.List;
+
 public class ShowCart extends Command<CookieOnDemand> {
 
 	private Customer customer;
@@ -23,7 +25,7 @@ public class ShowCart extends Command<CookieOnDemand> {
 	}
 
 	@Override
-	public void loadArgs() {
+	public void load(List<String> args) {
 		customer = system.getCustomers().findByFirstName(args.get(0)).get();
 	}
 

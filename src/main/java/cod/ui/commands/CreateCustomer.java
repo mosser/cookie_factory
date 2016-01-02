@@ -5,6 +5,8 @@ import cod.CustomerDatabase;
 import cod.tcf.Customer;
 import cod.ui.framework.Command;
 
+import java.util.List;
+
 
 public class CreateCustomer extends Command<CookieOnDemand> {
 
@@ -17,7 +19,7 @@ public class CreateCustomer extends Command<CookieOnDemand> {
 	public String describe() { return "create a new customer in the system (create CUSTOMER)"; }
 
 	@Override
-	public void loadArgs() { customerName = args.get(0); }
+	public void load(List<String> args) { customerName = args.get(0); }
 
 	@Override
 	public void execute() {

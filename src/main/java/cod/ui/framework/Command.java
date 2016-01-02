@@ -9,17 +9,15 @@ public abstract class Command<T> {
 	abstract public String describe();
 
 	public boolean shouldContinue() { return true; }  // default implementation
-	public void loadArgs() {  }  // default implementation
+	public void load(List<String> args) {  }          // default implementation
 
 
 	protected T system;
-	protected List<String> args;
 
 	public void withSystem(T system)                    { this.system = system;   }
-	public void withParameters(List<String> parameters) { this.args = parameters; }
 
-	public boolean process() {
-		try { loadArgs(); }
+	public boolean process(List<String> args) {
+		try { load(args); }
 		catch (Exception e) {
 			throw new IllegalArgumentException(e);
 		}
@@ -27,8 +25,4 @@ public abstract class Command<T> {
 		return shouldContinue();
 	}
 
-	@Override
-	public String toString() {
-		return identifier() + "(" + args.toString().replace("[","").replace("]","") + ")";
-	}
 }

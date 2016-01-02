@@ -55,8 +55,7 @@ public class Shell<T> {
 		try {
 			Command inst = command.newInstance();
 			inst.withSystem(system);
-			inst.withParameters(args);
-			return inst.process();
+			return inst.process(args);
 
 		} catch(InstantiationException|IllegalAccessException e) {
 			System.err.println("Unable to instantiate command " + command.toString());

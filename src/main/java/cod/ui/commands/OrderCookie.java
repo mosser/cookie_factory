@@ -8,6 +8,8 @@ import cod.tcf.Item;
 import cod.tcf.Recipes;
 import cod.ui.framework.Command;
 
+import java.util.List;
+
 public class OrderCookie extends Command<CookieOnDemand> {
 
 	protected Customer customer;
@@ -18,7 +20,7 @@ public class OrderCookie extends Command<CookieOnDemand> {
 	public String identifier() { return "order"; }
 
 	@Override
-	public void loadArgs() {
+	public void load(List<String> args) {
 		customer = system.getCustomers().findByFirstName(args.get(0)).get();
 		quantity = Integer.parseInt(args.get(1));
 		cookie   = Recipes.valueOf(args.get(2));
